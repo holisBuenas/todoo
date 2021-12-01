@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import ListaItems from "./components/ListaItems";
+import FormItems from "./components/FormItems"
+import {useState} from 'react'
+
 
 function App() {
+
+  const initialState = {
+    id:0,
+    text:"hola como estas?",
+    editar:false,
+  }
+
+  const [state, setState] = useState([initialState])
+
+  const agregarTarea = event => {
+    event.preventDefault()
+    
+
+    if(event.target.tarea.value !== ""){
+
+      const newTodoo = {
+      id: Math.random(),
+      text:event.target.tarea.value,
+      editar:false
+    }
+
+    
+    setState([...state, newTodoo  ])
+    }else {
+    console.log('hola')
+  }
+    
+    event.target.tarea.value = ""
+  } 
+
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ListaItems 
+      setState = {setState}
+      state ={state}
+      ></ListaItems>
+      <FormItems
+      agregarTarea={agregarTarea}
+      ></FormItems>
     </div>
   );
 }
