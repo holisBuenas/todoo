@@ -1,8 +1,7 @@
 import ListaItems from "./components/ListaItems";
 import FormItems from "./components/FormItems"
 import {useState} from 'react'
-
-
+import "./App.css"
 function App() {
 
   const initialState = {

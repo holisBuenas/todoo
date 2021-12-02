@@ -1,7 +1,10 @@
+import "./FormItems.css"
+
 const FormItems = ({agregarTarea}) =>{
     return(
-        <form onSubmit={agregarTarea}>
-            <input name="tarea" type="text" />
+        <form className="form" onSubmit={agregarTarea}>
+            <h2 htmlFor="tarea">Nueva Tarea</h2>
+            <input placeholder="Nuevo Todoo" name="tarea" type="text" />
             <button>Agregar</button>
         </form>
     )

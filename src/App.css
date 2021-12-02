@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+}
+.App {
+  display: flex;
+  flex-direction: column-reverse;
+  border: 1px solid rebeccapurple;
+  justify-content: center;
+  align-content: center;
+}

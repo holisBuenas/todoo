@@ -1,8 +1,9 @@
 import Item from "../Item"
+import "./ListaItems.css"
 
 const ListaItems = ({state,setState}) =>{
     return(
-        <div>
+        <div className="listItems">
            {state.map((item)=>{
                return(
                    <Item

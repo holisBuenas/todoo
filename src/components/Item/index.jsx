@@ -1,3 +1,4 @@
+import "./Item.css"
 
 const Item = ({text,state,id,setState}) =>{
     const eliminarTarea = (event) =>{
@@ -20,7 +21,7 @@ const Item = ({text,state,id,setState}) =>{
       
 //   }
     return(
-        <div>
+        <div className="item">
             <div>
                 {text}
             </div>
